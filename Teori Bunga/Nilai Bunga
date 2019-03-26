@@ -1,0 +1,19 @@
+bunga<-function(num,At,k,t,m=TRUE){
+  #num  :pilihan, 1: bunga tunggal; 2: bunga majemuk; 3:bunga majemuk kontinu
+  #At   :nilai akumulasi
+  #k    :modal
+  #t    :waktu
+  #m    :banyaknya bunga diberikan dalam satu tahun
+  switch(num,
+         satu={
+           bunga=(At/k-1)/t
+         },
+         dua={
+           bunga=m*((At/k)^(1/(m*t))-1)
+         },
+         tiga={
+           bunga=log(At/k)/t
+         })
+  return(bunga)
+}
+
