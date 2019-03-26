@@ -1,0 +1,27 @@
+setwd("F:\\shevina\\KULIAH\\Semester 4\\PENGANTAR STATISTIKA KEUANGAN\\PSK R")
+
+nilaiakumulasi<-function(k,i,t){
+  At<-k*(1+i*t)
+  return(At)
+}
+
+nilaiakumulasi<-function(num,k,i,t,m=TRUE){
+  #num  : pilihan, 1 :bunga tunggal; 2 :bunga majemuk; 3 :bunga majemuk kontinu
+  #k    : modal
+  #i    : bunga(desimal)
+  #t    : waktu
+  #m    : banyaknya bunga diberikan dalam satu tahun
+  #
+  switch(num,
+         satu={
+           At=k*(1+i*t)
+         },
+         dua={
+           At=k*(1+i/m)^(m*t)
+         },
+         tiga={
+           At=k*exp(i*t)
+           }
+         )
+return(At)
+}
