@@ -1,0 +1,19 @@
+annuitas<-function(num,k,i,t,m=T){
+  n=m*t
+  j=i/m
+  v=(j+1)^-1
+  switch (num,
+    satu = {
+      an=k*(1-v^n)/j
+      sn=k*((1+j)^n-1)/j
+      cat("present value untuk annuitas akhir:",an,"\n")
+      cat("nilai akumulasi untuk annuitas akhir:", sn)
+      },
+    dua={
+      an=k*(1-v^n)/(j*v)
+      sn=k*((1+j)^n-1)/(j*v)
+      cat("present value untuk annuitas awal:", an,"\n")
+      cat("nilai akumulasi untuk annuitas awal:", sn)
+    }
+  )
+}
