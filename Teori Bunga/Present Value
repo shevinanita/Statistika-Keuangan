@@ -1,0 +1,15 @@
+presentvalue<-function(num,At,i,t,m=TRUE){
+  switch(num,
+         satu={
+           PV=At/(1+i*t)
+           cat("Nilai PV bunga tunggal :",PV)
+           },
+         dua={
+           PV=At/(1+i/m)^(m*t) 
+           cat("Nilai PV bunga majemuk :",PV)
+           },
+         tiga={
+           PV=At*exp(-i*t)
+           cat("Nilai PV bunga majemuk kontinu",PV)
+         })
+}
